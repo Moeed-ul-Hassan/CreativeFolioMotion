@@ -6,6 +6,16 @@
     --transition: all 0.3s ease;
 }
 
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -376,7 +386,7 @@ section {
     text-align: justify;
     line-height: 1.8;
 }
-/* Added styles for the profile image section */
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
