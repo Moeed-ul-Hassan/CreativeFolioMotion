@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cursor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="loader">
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="split-text">Creative Developer</h1>
+            <p class="hero-description">Crafting digital experiences through code and design</p>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Scroll Down</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a passionate developer focused on creating immersive web experiences. With expertise in modern web technologies and creative animations, I bring ideas to life through clean code and innovative design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Project One</h3>
+                    <p>Interactive web application with modern animations</p>
+                    <div class="project-links">
+                        <a href="#" class="btn">View Project</a>
+                        <a href="#" class="btn">Source Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Project Two</h3>
+                    <p>Creative portfolio with GSAP animations</p>
+                    <div class="project-links">
+                        <a href="#" class="btn">View Project</a>
+                        <a href="#" class="btn">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item" data-skill="HTML5">
+                <i class="fab fa-html5"></i>
+                <span class="skill-name">HTML5</span>
+            </div>
+            <div class="skill-item" data-skill="CSS3">
+                <i class="fab fa-css3-alt"></i>
+                <span class="skill-name">CSS3</span>
+            </div>
+            <div class="skill-item" data-skill="JavaScript">
+                <i class="fab fa-js"></i>
+                <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item" data-skill="React">
+                <i class="fab fa-react"></i>
+                <span class="skill-name">React</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" required>
+                <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" required></textarea>
+                <label for="message">Message</label>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <script src="/js/cursor.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
