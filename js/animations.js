@@ -212,4 +212,36 @@ function initializeAnimations() {
             ease: 'power4.out'
         });
     });
+
+    // Add animations for experience timeline
+    gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+        gsap.from(item, {
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            x: i % 2 === 0 ? -50 : 50,
+            duration: 0.8,
+            ease: 'power3.out'
+        });
+    });
+
+    // Testimonials animation with stagger and scale effect
+    gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 30,
+            scale: 0.9,
+            duration: 0.6,
+            delay: i * 0.2,
+            ease: 'back.out(1.7)'
+        });
+    });
 }
