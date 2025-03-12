@@ -168,7 +168,7 @@ body {
     border: 2px solid var(--secondary-color);
     border-radius: 20px;
     position: relative;
-    animation: floatMouse 2s infinite ease-in-out; /* Added animation */
+    animation: floatMouse 2s infinite ease-in-out;
 }
 
 .mouse::before {
@@ -204,10 +204,9 @@ body {
     }
 }
 
-
 .section-title {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
     color: var(--secondary-color);
     position: relative;
@@ -225,27 +224,28 @@ body {
 }
 
 section {
-    padding: 6rem 4rem;
-    min-height: 100vh;
+    padding: 4rem 4rem;
+    min-height: auto;
     position: relative;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     perspective: 1000px;
+    margin-top: 1rem;
 }
 
 .project-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
-    transform: perspective(1000px); /*Added perspective*/
+    transform: perspective(1000px);
 }
 
 .project-card::before {
@@ -308,12 +308,13 @@ section {
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
     text-align: center;
 }
 
 .skill-item {
-    padding: 2rem;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     transition: var(--transition);
@@ -362,14 +363,28 @@ section {
     transition: opacity 0.3s ease;
 }
 
+.about {
+    padding-top: 2rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    text-align: justify;
+    line-height: 1.8;
+}
+
 .contact-form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
 }
 
 .form-group {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group input,
@@ -460,7 +475,6 @@ section {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 2rem;
@@ -471,15 +485,22 @@ section {
     }
 
     section {
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
+    }
+
+    .hero {
+        padding: 0 2rem;
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    .cursor,
-    .cursor-follower {
-        display: none;
+    .projects-grid {
+        gap: 1rem;
+    }
+
+    .skills-container {
+        gap: 1rem;
     }
 }

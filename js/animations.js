@@ -24,6 +24,20 @@ gsap.to('.loader', {
 });
 
 function initializeAnimations() {
+    // Update scroll trigger positions for the more compact layout
+    gsap.utils.toArray('section').forEach(section => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            markers: false,
+            onEnter: () => {
+                section.style.opacity = 1;
+                section.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
     // Hero section text reveal animation
     const heroText = document.querySelector('.hero h1');
     const originalText = heroText.textContent;
@@ -85,7 +99,7 @@ function initializeAnimations() {
         ease: 'power1.inOut'
     });
 
-    // Projects stagger animation with 3D effect
+    // Projects stagger animation with adjusted timing
     const projectCards = gsap.utils.toArray('.project-card');
     projectCards.forEach((card, i) => {
         gsap.set(card, { transformPerspective: 1000 });
@@ -93,24 +107,24 @@ function initializeAnimations() {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 80%',
+                start: 'top 85%', // Adjusted trigger point
                 toggleActions: 'play none none reverse'
             },
             opacity: 0,
-            y: 100,
-            rotationX: 45,
-            duration: 1,
-            delay: i * 0.2,
+            y: 50, // Reduced distance
+            rotationX: 30, // Reduced rotation
+            duration: 0.8,
+            delay: i * 0.15, // Faster stagger
             ease: 'power3.out'
         });
     });
 
-    // Floating animation for skill items
+    // Skills animation with adjusted spacing
     gsap.utils.toArray('.skill-item').forEach((skill, i) => {
         // Random floating animation
         gsap.to(skill, {
-            y: 'random(-10, 10)',
-            duration: 'random(2, 3)',
+            y: 'random(-8, 8)', // Reduced floating range
+            duration: 'random(1.5, 2.5)',
             repeat: -1,
             yoyo: true,
             ease: 'power1.inOut',
@@ -121,13 +135,13 @@ function initializeAnimations() {
         gsap.from(skill, {
             scrollTrigger: {
                 trigger: skill,
-                start: 'top 80%',
+                start: 'top 85%',
                 toggleActions: 'play none none reverse'
             },
             scale: 0,
-            rotation: 90,
+            rotation: 45, // Reduced rotation
             opacity: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: 'back.out(1.7)'
         });
     });
@@ -183,18 +197,18 @@ function initializeAnimations() {
         });
     });
 
-    // Contact form animations
+    // Contact form animations with reduced offsets
     const formElements = gsap.utils.toArray('.form-group, .submit-btn');
     formElements.forEach((element, index) => {
         gsap.from(element, {
             scrollTrigger: {
                 trigger: element,
-                start: 'top 80%',
+                start: 'top 85%',
                 toggleActions: 'play none none reverse'
             },
-            x: index % 2 === 0 ? -50 : 50,
+            x: index % 2 === 0 ? -30 : 30, // Reduced offset
             opacity: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: 'power4.out'
         });
     });
