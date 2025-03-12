@@ -376,6 +376,70 @@ section {
     text-align: justify;
     line-height: 1.8;
 }
+/* Added styles for the profile image section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-wrapper {
+    position: relative;
+    padding-top: 125%; /* 4:5 aspect ratio */
+    overflow: hidden;
+}
+
+.profile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--secondary-color), transparent);
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.about-image:hover .profile-image {
+    transform: scale(1.05);
+}
+
+.about-image:hover .image-overlay {
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .image-wrapper {
+        padding-top: 100%; /* 1:1 aspect ratio on mobile */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
 
 .contact-form {
     max-width: 600px;
